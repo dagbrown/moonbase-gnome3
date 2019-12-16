@@ -1,11 +1,11 @@
           MODULE=abiword
-         VERSION=3.0.2
+         VERSION=3.0.4
           SOURCE=$MODULE-$VERSION.tar.gz
       SOURCE_URL=http://www.abisource.com/downloads/$MODULE/$VERSION/source
-      SOURCE_VFY=sha256:afbfd458fd02989d8b0c6362ba8a4c14686d89666f54cfdb5501bd2090cf3522
+      SOURCE_VFY=sha256:e93096cb192e5bc19d62e180fc5eda643206465315a710113ae5036bc2a1a5d7
         WEB_SITE=http://www.abisource.com
          ENTERED=20011224
-         UPDATED=20161127
+         UPDATED=20191127
            SHORT="A full-featured, yet light and fast word processor"
 
 cat << EOF

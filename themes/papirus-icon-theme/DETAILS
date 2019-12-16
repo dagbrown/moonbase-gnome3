@@ -1,0 +1,20 @@
+          MODULE=papirus-icon-theme
+         VERSION=20191201
+          SOURCE=$MODULE-$VERSION.tar.gz
+ SOURCE_URL_FULL=https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/$VERSION.tar.gz
+      SOURCE_VFY=24d6be7b0139fcdfeeee2b9e14a16bd67a4334ad84e9f1e87b75c921457e57c7
+        WEB_SITE=https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/
+         ENTERED=20191102
+         UPDATED=20191203
+           SHORT="Papirus Icon Theme"
+ARCHIVE=off
+cat << EOF
+Papirus is a freehttps://github.com/PapirusDevelopmentTeam/papirus-icon-theme and open source SVG icon theme for Linux, based on Paper
+Icon Set with a lhttps://github.com/PapirusDevelopmentTeam/papirus-icon-themeot of new icons and a few extras, like Hardcode-Tray
+support, KDE colohttps://github.com/PapirusDevelopmentTeam/papirus-icon-themerscheme support, Folder Color support, and others.
+Papirus icon themhttps://github.com/PapirusDevelopmentTeam/papirus-icon-themee is available in four variants:
+  Papirus
+  Papirus Dark
+  Papirus Light
+  ePapirus (for ehttps://github.com/PapirusDevelopmentTeam/papirus-icon-themelementary OS and Pantheon Desktop)
+EOF
