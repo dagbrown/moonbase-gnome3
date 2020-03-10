@@ -14,33 +14,37 @@ if module_installed cups; then
    depends colord
 fi
 
-#optional_depends json-glib \
-#                 "-Dprint_backends=cloudprint" \
-#                 "--disable-cloudprint" \
-#                 "required by cloudprint"
-
 optional_depends %X \
                  "-Dx11_backend=true" \
                  "-Dx11_backend=false" \
                  "for the X11 backend (recommended)"
 
+#optional_depends json-glib \
+#                 "-Dprint_backends=cloudprint" \
+#                 "--disable-cloudprint" \
+#                 "required by cloudprint"
+
 optional_depends wayland-protocols \
                  "-Dwayland_backend=true" \
                  "-Dwayland_backend=false" \
-                 "for the waylany backend"
+                 "for the waylany backend" \
+                 "y"
 
 # Documentation and introspection
-optional_depends gtk-doc \
-                 "-Dgtk_doc=true" \
-                 "-Dgtk_doc=false" \
-                 "for building documentation"
-
 optional_depends man \
                  "-Dman=true" \
                  "-Dman=false" \
-                 "for building manual pages"
+                 "for building manual pages" \
+		        "n"
+
+optional_depends gtk-doc \
+                 "-Dgtk_doc=true" \
+                 "-Dgtk_doc=false" \
+                 "for building documentation" \
+                 "n"
 
 optional_depends gobject-introspection \
                  "-Dintrospection=true" \
                  "-Dintrospection=false" \
-                 "for introspection support"
+                 "for introspection support" \
+                 "y"

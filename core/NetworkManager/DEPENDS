@@ -12,7 +12,10 @@ depends libgudev
 
 optional_depends gnome-bluetooth "" "" "for Bluetooth support"
 
-optional_depends ModemManager "--with-modem-manager-1" "" "for mobile broadband modem support"
+optional_depends ModemManager \
+                 "--with-modem-manager-1" "" \
+                 "for mobile broadband modem support" \
+                 "n"
 
 optional_depends nss     "--with-crypto=nss"    "" "for NSS crypto support"
 optional_depends gnutls  "--with-crypto=gnutls" "" "for TLS crypto support"
@@ -22,12 +25,12 @@ optional_depends dhcp     "--with-dhclient=yes" "--with-dhclient=no" "for standa
 optional_depends dhcpcd   "--with-dhcpcd=yes"   "--with-dhcpcd=no"   "for alternative DHCP client"
 optional_depends polkit   "--enable-polkit=yes" "--enable-polkit=no" "for polkit support"
 optional_depends valgrind "--with-valgrind=yes" "--with-valgrind=no" "for valgrind support"
-optional_depends jansson  "--enable-ovs"        "--disable-ovs"      "for open virtual switch support" n 
-optional_depends gtk-doc  "--enable-gtk-doc"    "--disable-gtk-doc"  "for documentation generation" n
+optional_depends jansson  "--enable-ovs"        "--disable-ovs"      "for open virtual switch support" n
 
-if in_depends gtk-doc; then
-  depends YAML
-fi
+optional_depends vala \
+                 "--enable-vala=yes" \
+                 "--enable-vala=no"  \
+                 "for vala support (needs introspection support)"
 
 optional_depends wpa_supplicant \
                  "--enable-wifi" \
@@ -50,15 +53,22 @@ optional_depends ppp \
                  "--disable-ppp" \
                  "for Point-to-Point Protocol with dial-up networking support"
 
+optional_depends gtk-doc\
+                 "--enable-gtk-doc" \
+                 "--disable-gtk-doc" \
+                 "for documentation generation" \
+                 "n"
+
+if in_depends gtk-doc; then
+  depends YAML
+fi
+
 optional_depends gobject-introspection \
                  "--enable-introspection" \
                  "--disable-introspection" \
-                 "for introspection support"
+                 "for introspection support" \
+                 "y"
 
 if in_depends "$MODULE" "gobject-introspection"; then
     depends python-pygobject
-
-    optional_depends vala "--enable-vala=yes" "--enable-vala=no" "for vala support (needs introspection support)" y
 fi
-
-

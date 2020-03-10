@@ -15,7 +15,7 @@ depends harfbuzz
 depends enchant
 depends mesa-lib
 
-optional_depends gtk+-2 "" " " "also build gtk+-2 version of webkit"
+optional_depends gtk+-2 "" " " "also build gtk+-2 version of webkit" "n"
 
 # workaround for make_names.pl
 depends Switch
@@ -36,6 +36,11 @@ optional_depends geoclue2 \
 optional_depends gtk-doc \
                  "--enable-gtk-doc" \
                  "--disable-gtk-doc" \
-                 "for building documentation"
+                 "for building documentation" \
+                 "n"
 
-depends gobject-introspection
+optional_depends gobject-introspection \
+                 "--enable-introspection" \
+                 "--disable-introspection" \
+                 "for object introspection" \
+                 "y"
