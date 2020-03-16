@@ -1,8 +1,12 @@
 depends libSM
+depends libxkbcommon
 depends gsettings-desktop-schemas
 depends startup-notification
-depends libxkbcommon
 depends gnome-settings-daemon
+depends pipewire
+depends meson
+
+#depends graphene
 
 optional_depends wayland-protocols "" "" "for Wayland support" "y"
 
@@ -18,14 +22,8 @@ optional_depends mesa-lib \
                  "Enable EGL support" \
                 "y"
 
-optional_depends pipewire \
-                 "-Dremote_desktop=true" \
-                 "-Dremote_desktop=false" \
-                 "Enable remote desktop support" \
-                "y"
-
 optional_depends gobject-introspection \
                  "-Dintrospection=true" \
                  "-Dintrospection=false" \
-                 "Enable introspeciton support. Gnome shell requires mutter with introspection support enabled" \
+                 "Enable introspection support (Required for Gnome Shell)" \
                  "y"
